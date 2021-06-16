@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <h1 style="margin-left: 45%; color: rgb(250, 133, 23);">Ques 1</h1>
+    </head>
+        <body>
+         <div>
+            <input placeholder="product id..." type="text" name="pid" value="" id="pid" style="margin-left: 50px;">
+            <br/><br/>
+            
+            <input placeholder="Quantity id..." type="number" name="Quantity" value="" id="qty" style="margin-left: 50px;">
+            <br/><br/>
+         </div>        
+    <script>
+
+        function fun()
+         {
+            var a= document.getElementById("pid").value;
+            var b= document.getElementById("qty").value;
+            
+            var url = "https://dev08-na-conair.demandware.net/on/demandware.store/Sites-us-metal-craft-Site/default/ProductCart-Start?pid="+a+"&quantity="+b;
+
+            document.write("Redirecting to the url in 3 seconds...");
+            setTimeout(function(){window.location = url;}, 3000);
+        }
+    </script>
+             <button onclick="fun()" style="margin-left: 100px;">GO....</button>
+            
+    </body>
+</html>
+
