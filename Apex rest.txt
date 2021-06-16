@@ -1,0 +1,22 @@
+@RestResource(urlMapping='/createOrder/')
+global class api_order{
+    @HTTPPost
+    global static string create(){
+        integer x;
+        RestRequest req =RestContext.request;
+        RestResponse res = RestContext.response;        
+        List<String> OrderNoList = req.params.get('OrderNo').split(',');
+        x=OrderNoList.size();
+        List<Order__c> orderList=new List<Order__c>();  
+        if(!OrderNoList.isEmpty())
+        {
+            for(integer i=0; i<x;i++)
+            {
+                Order__c o=new Order__c(Name=OrderNoList[i]);
+                orderList.add(o);
+            }
+            Database.insert(orderList,false);
+        }
+        return 'Success';
+    }
+}
