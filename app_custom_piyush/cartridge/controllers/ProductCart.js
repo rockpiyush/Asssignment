@@ -11,8 +11,7 @@ server.get('Start', function (req, res, next)
 {
     var productId=req.querystring.pid;
 
-    var quantity=parseInt(1, 10);
-       quantity=parseInt(req.querystring.quantity, 10);
+    var quantity=parseInt(req.querystring.quantity, 10);
     var result={};
     
     var currentBasket = BasketMgr.getCurrentOrNewBasket();
